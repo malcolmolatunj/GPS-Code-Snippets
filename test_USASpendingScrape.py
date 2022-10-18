@@ -26,6 +26,7 @@ class TestUSASpendingScrape(unittest.TestCase):
             download_zips(award_list)
             mock_requests.get.assert_called()
             m.assert_called()
+            m().write.assert_called()
 
 
 if __name__ == "__main__":

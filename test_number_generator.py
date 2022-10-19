@@ -10,14 +10,14 @@ class TestNumberGenerator(unittest.TestCase):
     def test_max_combinations(self):
         self.assertEqual(self.basic_NG.max_combinations, 38)
 
-    def test_value_error(self):
-        with self.assertRaises(ValueError):
+    def test_index_error(self):
+        with self.assertRaises(IndexError):
             self.basic_NG.format(-1)
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.basic_NG.format(38)
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.basic_NG.format(39)
 
     def test_endpoints(self):

@@ -31,7 +31,10 @@ class NumberGenerator:
 
     def format(self, number):
         if number < 0 or number >= self.max_combinations:
-            raise ValueError(f"{number} exceeded range [0, {self.max_combinations}\)")
+            raise IndexError(f"{number} exceeded range [0, {self.max_combinations}\)")
+
+        if not isinstance(number, int):
+            raise TypeError(f"{self.__class__.__name__} can only format integers")
 
         for idx, threshold in enumerate(self.thresholds, start=1):
             if number < threshold:

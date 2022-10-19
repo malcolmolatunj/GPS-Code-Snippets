@@ -20,6 +20,22 @@ class TestNumberGenerator(unittest.TestCase):
         with self.assertRaises(IndexError):
             self.basic_NG.format(39)
 
+    def test_type_error(self):
+        with self.assertRaises(TypeError):
+            self.basic_NG.format(0.5)
+
+        with self.assertRaises(TypeError):
+            self.basic_NG.format([])
+
+        with self.assertRaises(TypeError):
+            self.basic_NG.format({})
+
+        with self.assertRaises(TypeError):
+            self.basic_NG.format(1 + 5j)
+
+        with self.assertRaises(TypeError):
+            self.basic_NG.format("one")
+
     def test_endpoints(self):
         self.assertEqual(self.basic_NG.format(0), "A00")
         self.assertEqual(self.basic_NG.format(17), "B22")

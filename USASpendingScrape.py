@@ -35,7 +35,7 @@ awards = [
     Grant("NU2GGH002315", CDC),
     Grant("AID674A1600005", USAID),
     Grant("NU2GGH002301", CDC),
-    # Grant("NU2GGH002010", CDC),
+    Grant("NU2GGH002010", CDC),
     # Grant("NU2GGH002369", CDC),
     Grant("NU2GGH002425", CDC),
     Contract("72062122C00001", USAID),

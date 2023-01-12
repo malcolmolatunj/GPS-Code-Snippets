@@ -3,6 +3,7 @@ interface Bidder {
   isSelected: boolean;
   bidderName: string;
   isWinner: boolean;
+  vendorId: string;
 }
 
 interface LineItem {
@@ -16,6 +17,15 @@ interface LineItem {
 class PJFComponent {
   winnerCount = 0;
   bidderAnalysisGridLineItems: LineItem[] = [];
+  pjfSubmissionDetails: {
+    bidderAnalysis: Bidder[];
+    bidderAssessmentProposals: Bidder[];
+  } = {
+    bidderAnalysis: [],
+    bidderAssessmentProposals: [],
+  };
+  lowestPriceToNonCompetitiveFlag = false;
+  selectedSelectionMethod = 1;
 
   checkWinnerFlag(bidder: VendorProposal): void {
     if (
